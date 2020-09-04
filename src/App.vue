@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import waitGlobal from "./tronweb";
+import waitGlobal from './tronweb'
 export default {
   mounted() {
     window.onload = function() {

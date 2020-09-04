@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import TronWeb from "tronweb/dist/TronWeb";
+import TronWeb from 'tronweb/dist/TronWeb'
 import { mapActions, mapState } from 'vuex'
 import contract from '@/contract.json'
 
@@ -81,7 +81,7 @@ export default {
     }
   },
   created() {
-    console.log("TronWeb", TronWeb, "TronWeb end");
+    console.log('TronWeb', TronWeb, 'TronWeb end')
 
     // const fullNode = "https://api.trongrid.io";
     // const solidityNode = "https://api.trongrid.io";

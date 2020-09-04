@@ -27,16 +27,16 @@ const mutations = {
 
 
 const YAMLENDPool = () => {
-  let address = window.tronWeb.address.fromHex(contract.yam_lend_pool.address);
+  let address = window.tronWeb.address.fromHex(contract.yam_lend_pool.address)
   return window.tronWeb.contract(abi.YAMLENDPool, address)
 }
 const YAMPool = () => {
-  let address = window.tronWeb.address.fromHex(contract.yam.address);
+  let address = window.tronWeb.address.fromHex(contract.yam.address)
   return window.tronWeb.contract(abi.YAM, address)
 }
 
 const WTRONPool = () => {
-  let address = window.tronWeb.address.fromHex(contract.wtron.address);
+  let address = window.tronWeb.address.fromHex(contract.wtron.address)
   return window.tronWeb.contract(abi.WTRON, address)
 }
 
@@ -56,7 +56,7 @@ const actions = {
   // get balanceOf
   balanceOf: async ({ rootState }: any, { abiName, contract }: any) => {
     try {
-      let address = window.tronWeb.address.fromHex(contract);
+      let address = window.tronWeb.address.fromHex(contract)
       const pool =  window.tronWeb.contract(abi[abiName], address)
       const coinbase = rootState.tronweb.account
       const balanceOf = await pool.methods.balanceOf(coinbase).call()
@@ -86,7 +86,7 @@ const actions = {
   },
   approveState: async ({ rootState }: any) => {
     try {
-      let address = window.tronWeb.address.fromHex(contract.yam_lend_pool.address);
+      let address = window.tronWeb.address.fromHex(contract.yam_lend_pool.address)
       const pool = WTRONPool()
       const coinbase = rootState.tronweb.account
       const balanceOf = await pool.methods.allowance(coinbase, address).call()
@@ -103,7 +103,7 @@ const actions = {
     try {
       const pool = WTRONPool()
       const coinbase = rootState.tronweb.account
-      let address = window.tronWeb.address.fromHex(contract.yam_lend_pool.address);
+      let address = window.tronWeb.address.fromHex(contract.yam_lend_pool.address)
       const amount = parseUnits('100').toString()
       const res = await pool.methods.approve(address, amount).send({
         from: coinbase
